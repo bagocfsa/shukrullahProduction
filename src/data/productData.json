@@ -1,0 +1,40 @@
+{
+  "categories": [
+    { "name": "Kulikuli", "hidden": false },
+    { "name": "Oil", "hidden": false },
+    { "name": "School Materials", "hidden": false }
+  ],
+  "products": [
+    { "name": "LN Kuli", "price": 450, "stock": 50, "image": "kuli125gram.png", "category": "Kulikuli", "hidden": false },
+    { "name": "Small Pouch", "price": 600, "stock": 30, "image": "130gramparkagedkuli.jpg", "category": "Kulikuli", "hidden": false },
+    { "name": "Big Pouch", "price": 1200, "stock": 20, "image": "kuli250gram.png", "category": "Kulikuli", "hidden": false },
+    { "name": "Mudu", "price": 3500, "stock": 15, "image": "kuli850gramModu.webp", "category": "Kulikuli", "hidden": false },
+    { "name": "Kg", "price": 4000, "stock": 10, "image": "kuli1kg.jpeg", "category": "Kulikuli", "hidden": false },
+    { "name": "Paint Rubber", "price": 8000, "stock": 10, "image": "kuliPaint.jpeg", "category": "Kulikuli", "hidden": false },
+    { "name": "75cl Oil", "price": 2500, "stock": 40, "image": "75CLOil.PNG", "category": "Oil", "hidden": false },
+    { "name": "1 Litre Oil", "price": 4000, "stock": 35, "image": "1litreOil.PNG", "category": "Oil", "hidden": false },
+    { "name": "2 Litre Oil", "price": 7000, "stock": 20, "image": "2litre.jpeg", "category": "Oil", "hidden": false },
+    { "name": "4 Litre Oil", "price": 12000, "stock": 10, "image": "4litreOil.PNG", "category": "Oil", "hidden": false },
+    { "name": "Books", "price": 500, "stock": 100, "image": "books.jpg", "category": "School Materials", "hidden": false },
+    { "name": "Pen", "price": 100, "stock": 200, "image": "pen.jpg", "category": "School Materials", "hidden": false },
+    { "name": "Pencil", "price": 50, "stock": 150, "image": "pencil.jpg", "category": "School Materials", "hidden": false },
+    { "name": "Ruler", "price": 80, "stock": 120, "image": "ruler.jpg", "category": "School Materials", "hidden": false },
+    { "name": "Eraser", "price": 30, "stock": 180, "image": "eraser.jpg", "category": "School Materials", "hidden": false }
+  ],
+  "stocks": [
+    { "product": "LN Kuli", "quantity": 50 },
+    { "product": "Small Pouch", "quantity": 30 },
+    { "product": "Big Pouch", "quantity": 20 },
+    { "product": "Mudu", "quantity": 15 },
+    { "product": "Kg", "quantity": 10 },
+    { "product": "75cl Oil", "quantity": 40 },
+    { "product": "1 Litre Oil", "quantity": 35 },
+    { "product": "2 Litre Oil", "quantity": 20 },
+    { "product": "4 Litre Oil", "quantity": 10 },
+    { "product": "Books", "quantity": 100 },
+    { "product": "Pen", "quantity": 200 },
+    { "product": "Pencil", "quantity": 150 },
+    { "product": "Ruler", "quantity": 120 },
+    { "product": "Eraser", "quantity": 180 }
+  ]
+}

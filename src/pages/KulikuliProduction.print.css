@@ -1,0 +1,19 @@
+.print-receipt {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 1.1rem;
+  background: #fff;
+  color: #222;
+}
+
+@media print {
+  body *:not(.print-receipt) {
+    display: none !important;
+  }
+  .print-receipt {
+    display: block !important;
+    box-shadow: none;
+    border: none;
+  }
+}
