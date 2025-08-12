@@ -1,328 +1,38 @@
-/* Global App Styles */
-* {
-  box-sizing: border-box;
+.App {
+  text-align: center;
 }
 
-.app {
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-/* Theme variables */
-:root {
-  --primary: #e67e22;
-  --primary-dark: #d35400;
-  --secondary: #2c3e50;
-  --accent: #27ae60;
-  --bg-light: #fff;
-  --bg-gray: #f8f9fa;
-  --bg-dark: #2c3e50;
-  --text-light: #2c3e50;
-  --text-gray: #5a6c7d;
-  --text-dark: #ecf0f1;
-  --border-light: #e9ecef;
-  --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
-  --border-radius: 8px;
-  --border-radius-lg: 16px;
-}
-
-/* Global body styles */
-body {
-  margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--bg-gray);
-  color: var(--text-light);
-  line-height: 1.6;
-}
-
-/* Dark mode support */
-body.dark-mode {
-  background: var(--bg-dark);
-  color: var(--text-dark);
-}
-.dark-mode .modern-breakdown {
-  background: #23272f;
-  color: var(--text-dark);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-}
-.dark-mode .modern-table {
-  background: #23272f;
-  color: var(--text-dark);
-}
-.dark-mode .modern-table th {
-  background: #23272f;
-  color: #90caf9;
-}
-.dark-mode .modern-table tr:nth-child(even) {
-  background: var(--table-stripe-dark);
-}
-.dark-mode .total-cell, .dark-mode .total-value {
-  color: #90caf9;
-}
-.dark-mode .highlight {
-  background: var(--highlight-dark);
-  color: #fff;
-}
-.dark-mode .modern-grand-total {
-  background: linear-gradient(90deg, #23272f 0%, #2e7d32 100%);
-  color: #fff;
-}
-.theme-blue {
-  --primary: #1976d2;
-  --accent: #388e3c;
-}
-.theme-green {
-  --primary: #388e3c;
-  --accent: #1976d2;
-}
-.theme-purple {
-  --primary: #7c4dff;
-  --accent: #d500f9;
-}
-.theme-orange {
-  --primary: #ff9800;
-  --accent: #f44336;
-}
-.modern-table th {
-  transition: background 0.3s, color 0.3s;
-}
-.modern-table tr, .modern-table td {
-  transition: background 0.3s, color 0.3s;
-}
-.modern-breakdown, .modern-table, .modern-totals {
-  animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
-}
-.modern-table tr {
-  animation: rowFadeIn 0.5s cubic-bezier(.4,0,.2,1);
-}
-@keyframes rowFadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 700px) {
-  .modern-breakdown {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-  .modern-table th, .modern-table td {
-    padding: 0.5rem 0.5rem;
-    font-size: 0.95rem;
-  }
-  .input-field {
-    width: 80px;
-    font-size: 0.95rem;
-  }
-  .section-title {
-    font-size: 1rem;
-  }
-}
-
-.modern-breakdown, .modern-table, .modern-totals {
-  animation: fadeIn 0.7s ease;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.modern-table tr:nth-child(even) {
-  background: #f4f8fb;
-}
-.modern-table tr:hover {
-  background: #e3f2fd;
-  transition: background 0.2s;
-}
-.modern-table td strong {
-  display: flex;
   align-items: center;
-}
-.modern-table td strong::before {
-  content: "📦 ";
-  margin-right: 4px;
-  font-size: 1rem;
-}
-.modern-table th {
-  border-top: 2px solid #eaeaea;
-}
-.modern-table td.total-cell {
-  font-size: 1.08rem;
-  letter-spacing: 0.5px;
-}
-.modern-totals .totals-row {
-  border-bottom: 1px dashed #bdbdbd;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.modern-totals .totals-row:last-child {
-  border-bottom: none;
-}
-.modern-grand-total {
-  background: linear-gradient(90deg, #e3f2fd 0%, #c8e6c9 100%);
-  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.08);
-  border-radius: 8px;
-}
-.section-title {
-  font-size: 1.15rem;
-  color: #1976d2;
-  margin-bottom: 0.5rem;
-  margin-top: 1.5rem;
-  letter-spacing: 0.5px;
-}
-/* Modern cost breakdown styles for production cost calculator */
-.modern-breakdown {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 2rem;
-  margin-top: 2rem;
-}
-.modern-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-}
-.modern-table th, .modern-table td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #eaeaea;
-  text-align: left;
-}
-.modern-table th {
-  background: #f7f7f7;
-  font-weight: 600;
-  color: #333;
-}
-.modern-table tr:last-child td {
-  border-bottom: none;
-}
-.total-cell {
-  font-weight: bold;
-  color: #1976d2;
-}
-.modern-totals {
-  margin-bottom: 1.5rem;
-}
-.modern-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
-}
-.totals-label {
-  font-weight: 500;
-  color: #555;
-}
-.total-value {
-  font-weight: bold;
-  color: #1976d2;
-  font-size: 1.15rem;
-}
-.highlight {
-  background: #e3f2fd;
-  border-radius: 6px;
-  padding: 0.2rem 0.6rem;
-}
-.modern-grand-total {
-  font-size: 1.25rem;
-  color: #388e3c;
-  border-top: 2px solid #eaeaea;
-  margin-top: 1rem;
-  padding-top: 1rem;
-}
-.input-section {
-  margin-bottom: 1.5rem;
-}
-.input-label {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #333;
-  display: flex;
-  align-items: center;
-}
-.input-field {
-  margin-left: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: 1px solid #bdbdbd;
-  font-size: 1rem;
-  width: 120px;
-}
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #f5f7fa, #eef1f5);
-  color: #333;
-}
-
-.landing-container {
-  text-align: center;
-  padding: 30px;
-}
-
-.landing-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  color: #1f2d3d;
-}
-
-.landing-header p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-.landing-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.landing-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.landing-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-}
-
-.landing-card h2 {
-  margin-bottom: 8px;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 20px;
-  background: #007bff;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
   color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: background 0.3s;
 }
 
-.btn:hover {
-  background: #0056b3;
+.App-link {
+  color: #61dafb;
 }
 
-@media (max-width: 768px) {
-  .landing-header h1 {
-    font-size: 1.8rem;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  .landing-main {
-    grid-template-columns: 1fr;
+  to {
+    transform: rotate(360deg);
   }
 }
